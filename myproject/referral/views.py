@@ -1,6 +1,7 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.views.generic import TemplateView
 from .models import User
 from .serializers import UserSerializer
 import time
@@ -27,5 +28,17 @@ class UserProfileAPIView(APIView):
         serializer = UserSerializer(user)
         return Response(serializer.data)
 
-# ... Дополнительные представления
+
+class AuthTemplateView(TemplateView):
+    template_name = 'referral/auth.html'
+
+
+class VerifyCodeTemplateView(TemplateView):
+    template_name = 'referral/verify_code.html'
+
+
+class UserProfileTemplateView(TemplateView):
+    template_name = 'referral/user_profile.html'
+
+
 
