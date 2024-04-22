@@ -39,6 +39,3 @@ class VerifyCodeTemplateView(TemplateView):
 
 class UserProfileTemplateView(TemplateView):
     template_name = 'referral/user_profile.html'
-
-
-
