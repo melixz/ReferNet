@@ -9,7 +9,7 @@ import time
 
 class AuthAPIView(APIView):
     def post(self, request):
-        phone_number = request.data.get('phone_number')
+        phone_number = request.data.get("phone_number")
         # ... Логика проверки и отправки кода
         time.sleep(1)  # Имитация задержки отправки
         return Response(status=status.HTTP_200_OK)
@@ -17,7 +17,7 @@ class AuthAPIView(APIView):
 
 class VerifyCodeAPIView(APIView):
     def post(self, request):
-        code = request.data.get('code')
+        code = request.data.get("code")
         # ... Логика верификации кода и создания/получения пользователя
         return Response(status=status.HTTP_200_OK)
 
@@ -30,12 +30,12 @@ class UserProfileAPIView(APIView):
 
 
 class AuthTemplateView(TemplateView):
-    template_name = 'referral/auth.html'
+    template_name = "referral/auth.html"
 
 
 class VerifyCodeTemplateView(TemplateView):
-    template_name = 'referral/verify_code.html'
+    template_name = "referral/verify_code.html"
 
 
 class UserProfileTemplateView(TemplateView):
-    template_name = 'referral/user_profile.html'
+    template_name = "referral/user_profile.html"
